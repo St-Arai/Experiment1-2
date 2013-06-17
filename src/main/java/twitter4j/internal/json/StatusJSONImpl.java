@@ -487,7 +487,7 @@ import static twitter4j.internal.json.z_T4JInternalParseUtil.*;
                 ", retweetCount=" + retweetCount +
                 ", isPossiblySensitive=" + isPossiblySensitive +
                 ", isoLanguageCode=" + isoLanguageCode +
-                ", contributorsIDs=" + contributorsIDs +
+                ", contributorsIDs=" + Arrays.toString(contributorsIDs) +
                 ", retweetedStatus=" + retweetedStatus +
                 ", userMentionEntities=" + (userMentionEntities == null ? null : Arrays.asList(userMentionEntities)) +
                 ", urlEntities=" + (urlEntities == null ? null : Arrays.asList(urlEntities)) +
