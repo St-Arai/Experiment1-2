@@ -261,9 +261,10 @@ public final class HttpParameter implements Comparable, java.io.Serializable {
             encoded = URLEncoder.encode(value, "UTF-8");
         } catch (UnsupportedEncodingException ignore) {
         }
-        StringBuilder buf = new StringBuilder(encoded.length());
+        int length=encoded==null?0:encoded.length();
+        StringBuilder buf = new StringBuilder(length);
         char focus;
-        for (int i = 0; i < encoded.length(); i++) {
+        for (int i = 0; i < length; i++) {
             focus = encoded.charAt(i);
             if (focus == '*') {
                 buf.append("%2A");
