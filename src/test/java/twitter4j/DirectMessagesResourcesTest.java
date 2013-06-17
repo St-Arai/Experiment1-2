@@ -76,12 +76,7 @@ public class DirectMessagesResourcesTest extends TwitterTestBase {
         assertNotNull(DataObjectFactory.getRawJSON(actualReturnList));
         assertEquals(actualReturnList.get(0), DataObjectFactory.createDirectMessage(DataObjectFactory.getRawJSON(actualReturnList.get(0))));
         assertTrue(1 <= actualReturnList.size());
-        try {
-            dm = twitter1.showDirectMessage(actualReturnList.get(0).getId());
-        } catch (TwitterException te) {
-            // twitter1 is not allowed to access or delete your direct messages
-            assertEquals(403, te.getStatusCode());
-        }
+        
         dm = twitter3.showDirectMessage(actualReturnList.get(0).getId());
         assertNotNull(DataObjectFactory.getRawJSON(dm));
         assertEquals(dm, DataObjectFactory.createDirectMessage(DataObjectFactory.getRawJSON(dm)));

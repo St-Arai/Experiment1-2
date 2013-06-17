@@ -319,7 +319,7 @@ public class OAuthAuthorization implements Authorization, java.io.Serializable, 
      * @see <a href="http://oauth.net/core/1.0a/#rfc.section.9.2.1">OAuth Core - 9.2.1.  Generating Signature</a>
      */
     /*package*/ String generateSignature(String data, OAuthToken token) {
-        byte[] byteHMAC = null;
+        byte[] byteHMAC;
         try {
             Mac mac = Mac.getInstance(HMAC_SHA1);
             SecretKeySpec spec;

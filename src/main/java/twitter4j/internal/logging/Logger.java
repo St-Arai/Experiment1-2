@@ -72,8 +72,11 @@ public abstract class Logger {
             method.setAccessible(true);
             method.invoke(conf);
         } catch (IllegalAccessException ignore) {
+        	System.out.println(ignore);
         } catch (InvocationTargetException ignore) {
+        	System.out.println(ignore);
         } catch (NoSuchMethodException ignore) {
+        	System.out.println(ignore);
         }
     }
 

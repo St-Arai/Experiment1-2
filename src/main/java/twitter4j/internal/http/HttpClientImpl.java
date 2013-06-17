@@ -169,6 +169,7 @@ public class HttpClientImpl extends HttpClientBase implements HttpResponseCode, 
                     try {
                         os.close();
                     } catch (Exception ignore) {
+                    	System.out.println(ignore);
                     }
                 }
             } catch (IOException ioe) {
@@ -182,7 +183,7 @@ public class HttpClientImpl extends HttpClientBase implements HttpResponseCode, 
                     res.asString();
                 }
                 logger.debug("Sleeping " + CONF.getHttpRetryIntervalSeconds() + " seconds until the next retry.");
-                Thread.sleep(CONF.getHttpRetryIntervalSeconds() * 1000);
+                Thread.sleep(CONF.getHttpRetryIntervalSeconds() * 1000L);
             } catch (InterruptedException ignore) {
                 //nothing to do
             }

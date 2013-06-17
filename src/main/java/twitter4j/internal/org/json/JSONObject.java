@@ -162,6 +162,7 @@ public class JSONObject {
             try {
                 putOnce(names[i], jo.opt(names[i]));
             } catch (Exception ignore) {
+            	System.out.println(ignore);
             }
         }
     }
@@ -292,6 +293,7 @@ public class JSONObject {
             try {
                 putOpt(name, c.getField(name).get(object));
             } catch (Exception ignore) {
+            	System.out.println(ignore);
             }
         }
     }

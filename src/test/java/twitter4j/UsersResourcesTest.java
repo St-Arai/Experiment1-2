@@ -104,7 +104,6 @@ public class UsersResourcesTest extends TwitterTestBase {
         assertNotNull(DataObjectFactory.getRawJSON(user));
         assertEquals(user, DataObjectFactory.createUser(DataObjectFactory.getRawJSON(user)));
 
-        previousUser = user;
         user = twitter1.showUser(numberIdId);
         assertEquals(numberIdId, user.getId());
         assertNotNull(DataObjectFactory.getRawJSON(user));
